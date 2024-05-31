@@ -5,14 +5,17 @@ import Nav from './Components/Nav';
 import Home from './Components/Home';
 import { Outlet } from 'react-router-dom';
 import Footer from './Components/Footer';
+import { useState } from 'react';
 
 function App() {
+  const [numberOfItems, setNumberOfItems] = useState(0)
+
   return (
     <div className="App">
       
-      <Nav/>
+      <Nav numberOfItems={numberOfItems} setNumberOfItems={setNumberOfItems}/>
       <main >
-        <Outlet/>
+        <Outlet context={{ numberOfItems, setNumberOfItems }}/>
       </main>
       <Footer/>
     </div>
