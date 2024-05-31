@@ -9,13 +9,14 @@ import { useState } from 'react';
 
 function App() {
   const [numberOfItems, setNumberOfItems] = useState(0)
+  const [clickedItems, setClickedItems] = useState([])
 
   return (
     <div className="App">
       
       <Nav numberOfItems={numberOfItems} setNumberOfItems={setNumberOfItems}/>
       <main >
-        <Outlet context={{ numberOfItems, setNumberOfItems }}/>
+        <Outlet context={{ numberOfItems, setNumberOfItems, clickedItems, setClickedItems }}/>
       </main>
       <Footer/>
     </div>

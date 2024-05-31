@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Card = ({title, price, img, numberOfItems, setNumberOfItems}) => {
-  const handleCartBtn = () => {
-    setNumberOfItems(numberOfItems + 1)
+const Card = ({id, title, price, img, numberOfItems, setNumberOfItems, item, clickedItems, setClickedItems}) => {
+
+  
+  const handleCartBtn = () => { 
+    if (!clickedItems.includes(item.id)) {
+      setNumberOfItems(numberOfItems + 1);
+      setClickedItems([...clickedItems, { id, title, price, img }]);
+    }
 }
-
+console.log(clickedItems)
   return (
     
  
@@ -23,7 +28,7 @@ const Card = ({title, price, img, numberOfItems, setNumberOfItems}) => {
     
 
     <div className="mt-4 p-4 border-t border-gray-200 dark:border-gray-500 ">
-      <button onClick={handleCartBtn} className="w-full flex justify-between items-center font-bold cursor-pointer hover:underline text-gray-800 dark:text-gray-50">
+    <button onClick={handleCartBtn} disabled={clickedItems.includes(item.id)} className={`w-full flex justify-between items-center font-bold cursor-pointer hover:underline text-gray-800 dark:text-gray-50 ${clickedItems.includes(item.id) ? 'clicked' : ''}`}>
         <span className="text-base">Add to Cart</span>
         <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />

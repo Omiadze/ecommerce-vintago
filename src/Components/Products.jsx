@@ -1,11 +1,13 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { useOutletContext } from 'react-router-dom';import Card from './Ui/Card'
+import { useOutletContext } from 'react-router-dom';
+import Card from './Ui/Card'
 
 
 
 const Shop = () => {
   const { numberOfItems, setNumberOfItems } = useOutletContext();
+  const {clickedItems, setClickedItems} = useOutletContext()
     const [data, setData] = useState(null)
 const [error, setError] = useState(null);
 const [loading, setLoading] = useState(true);
@@ -43,7 +45,7 @@ useEffect(() => {
         <div className='flex flex-wrap ml-40 mr-40 justify-between mt-8'>
             {data?.map((item) => (
                 
-                <Card key={item.id} title={item.title} price={item.price} img={item.images[0]} numberOfItems={numberOfItems} setNumberOfItems={setNumberOfItems} />
+                <Card key={item.id} id={item.id} title={item.title} price={item.price} img={item.images[0]} numberOfItems={numberOfItems} setNumberOfItems={setNumberOfItems} item={item} clickedItems={clickedItems} setClickedItems={setClickedItems}/>
             ))}
         </div>
         
