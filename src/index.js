@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import Products from './Components/Products';
-import Home from './Components/Home';
-import Nav from './Components/Nav';
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import Products from "./Components/Products";
+import Home from "./Components/Home";
+import Nav from "./Components/Nav";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-
+import Cart from "./Components/Cart";
 
 const router = createBrowserRouter([
   {
@@ -22,16 +21,17 @@ const router = createBrowserRouter([
         path: "products",
         element: <Products />,
       },
+      {
+        path: "cart",
+        element: <Cart />,
+      },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    
-    <RouterProvider router={router}/>
-      
-    
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
