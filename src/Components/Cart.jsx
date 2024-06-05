@@ -1,18 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import ClickedItemsCard from "./Ui/ClickedItemsCard";
 
 const Cart = () => {
   const { clickedItems, setClickedItems } = useOutletContext();
+  const { subtotal, setSubtotal } = useOutletContext();
   const [total, setTotal] = useState(0);
 
   console.log("hello", clickedItems);
-  const calcSubToTal = () => {
+
+  console.log("sub", subtotal);
+
+  useEffect(() => {
     let sub = 0;
     clickedItems.map((item) => (sub = sub + item.price));
-    return sub;
-  };
-  const subTotal = calcSubToTal();
+    setSubtotal(sub);
+  }, [clickedItems, setSubtotal]);
+
   const deliveryCharge = clickedItems.length * 7;
   return (
     <section className="py-24 relative">
@@ -39,6 +43,7 @@ const Cart = () => {
               img={item.img}
               price={item.price}
               title={item.title}
+              setSubtotal={setSubtotal}
               total={setTotal}
               setTotal={setTotal}
             />
@@ -51,7 +56,7 @@ const Cart = () => {
               Sub Total
             </p>
             <h6 className="font-semibold text-xl leading-8 text-gray-900">
-              ${calcSubToTal()}
+              ${subtotal}
             </h6>
           </div>
           <div className="flex items-center justify-between w-full pb-6 border-b border-gray-200">
@@ -66,14 +71,14 @@ const Cart = () => {
             <p className="font-manrope font-medium text-2xl leading-9 text-gray-900">
               Total
             </p>
-            <h6 className="font-manrope font-medium text-2xl leading-9 text-indigo-500">
-              ${total}
+            <h6 className="font-manrope font-medium text-2xl leading-9  text-fuchsia-500">
+              ${subtotal + deliveryCharge}
             </h6>
           </div>
         </div>
         <div className="flex items-center flex-col sm:flex-row justify-center gap-3 mt-8">
-          <button className="rounded-full py-4 w-full max-w-[280px]  flex items-center bg-indigo-50 justify-center transition-all duration-500 hover:bg-indigo-100">
-            <span className="px-2 font-semibold text-lg leading-8 text-indigo-600">
+          <button className="rounded-full py-4 w-full max-w-[280px]  flex items-center bg-fuchsia-300 justify-center transition-all duration-500 hover:bg-fuchsia-500 ">
+            <span className="px-2 font-semibold text-lg leading-8 text-white ">
               Add Coupon Code
             </span>
             <svg
@@ -92,7 +97,7 @@ const Cart = () => {
               />
             </svg>
           </button>
-          <button className="rounded-full w-full max-w-[280px] py-4 text-center justify-center items-center bg-indigo-600 font-semibold text-lg text-white flex transition-all duration-500 hover:bg-indigo-700">
+          <button className="rounded-full w-full max-w-[280px] py-4 text-center justify-center items-center bg-fuchsia-600 font-semibold text-lg text-white flex transition-all duration-500 hover:bg-fuchsia-700">
             Continue to Payment
             <svg
               className="ml-2"

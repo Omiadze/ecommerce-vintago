@@ -10,6 +10,7 @@ import { useState } from "react";
 function App() {
   const [numberOfItems, setNumberOfItems] = useState(0);
   const [clickedItems, setClickedItems] = useState([]);
+  const [subtotal, setSubtotal] = useState(0);
 
   return (
     <div className="App">
@@ -21,6 +22,8 @@ function App() {
             setNumberOfItems,
             clickedItems,
             setClickedItems,
+            subtotal,
+            setSubtotal,
           }}
         />
       </main>

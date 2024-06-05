@@ -1,14 +1,23 @@
 import React from "react";
 import { useState } from "react";
 
-const ClickedItemsCard = ({ img, price, title, total, setTotal }) => {
+const ClickedItemsCard = ({
+  img,
+  price,
+  title,
+  total,
+  setTotal,
+  setSubtotal,
+}) => {
   const deliveryprice = 7;
   const [quantity, setQuantity] = useState(1);
 
   const plusBtnHandler = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);
     setTotal(price * quantity + deliveryprice);
+    setSubtotal((prevSub) => prevSub + price);
   };
+
   const minusBtnHandler = () => {
     setQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1));
     setTotal(price * quantity + deliveryprice);
@@ -24,7 +33,7 @@ const ClickedItemsCard = ({ img, price, title, total, setTotal }) => {
             {title}
           </h5>
 
-          <h6 className="font-medium text-lg leading-8 text-indigo-600  max-[550px]:text-center">
+          <h6 className="font-medium text-lg leading-8 text-fuchsia-500  max-[550px]:text-center">
             {price * quantity}
           </h6>
         </div>
@@ -112,7 +121,7 @@ const ClickedItemsCard = ({ img, price, title, total, setTotal }) => {
             </svg>
           </button>
         </div>
-        <h6 className="text-indigo-600 font-manrope font-bold text-2xl leading-9 w-full max-w-[176px] text-center">
+        <h6 className="text-fuchsia-500 font-manrope font-bold text-2xl leading-9 w-full max-w-[176px] text-center">
           {price * quantity + deliveryprice}
         </h6>
       </div>
