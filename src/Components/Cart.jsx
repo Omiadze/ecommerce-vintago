@@ -19,9 +19,9 @@ const Cart = () => {
 
   const deliveryCharge = clickedItems.length * 7;
   return (
-    <section className="py-24 relative">
-      <div className="w-full max-w-7xl px-4 md:px-5 lg-6 mx-auto">
-        <h2 className="title font-manrope font-bold text-4xl leading-10 mb-8 text-center text-black">
+    <section className="">
+      <div className="w-full max-w-7xl  lg-6 mx-auto">
+        <h2 className="title font-manrope font-bold text-4xl leading-10 mb-8 text-center text-black bg-fuchsia-400 p-8 text-white">
           Shopping Cart
         </h2>
         <div className="hidden lg:grid grid-cols-2 py-6">

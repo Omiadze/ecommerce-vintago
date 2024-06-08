@@ -1,24 +1,20 @@
-import React from 'react'
-import { useEffect, useState } from 'react'
-import { useOutletContext } from 'react-router-dom';
-import Card from './Ui/Card'
-
-
+import React from "react";
+import { useEffect, useState } from "react";
+import { useOutletContext } from "react-router-dom";
+import Card from "./Ui/Card";
 
 const Shop = () => {
   const { numberOfItems, setNumberOfItems } = useOutletContext();
-  const {clickedItems, setClickedItems} = useOutletContext()
-    const [data, setData] = useState(null)
-const [error, setError] = useState(null);
-const [loading, setLoading] = useState(true);
-console.log(numberOfItems)
+  const { clickedItems, setClickedItems } = useOutletContext();
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+  console.log(numberOfItems);
 
-useEffect(() => {
+  useEffect(() => {
     const fetchDataForPosts = async () => {
       try {
-        const response = await fetch(
-          `https://api.escuelajs.co/api/v1/products?limit=10`
-        );
+        const response = await fetch(`https://dummyjson.com/products`);
 
         let postsData = await response.json();
         setData(postsData);
@@ -32,27 +28,30 @@ useEffect(() => {
     };
 
     fetchDataForPosts();
-    console.log(data)
-  }, []); 
-
-  if(loading) {
-    return(
-        <h1>Loading...</h1>
-    )
+  }, []);
+  console.log("data", data);
+  if (loading) {
+    return <h1>Loading...</h1>;
   } else {
-    return(
-        
-        <div className='flex flex-wrap ml-40 mr-40 justify-between mt-8'>
-            {data?.map((item) => (
-                
-                <Card key={item.id} id={item.id} title={item.title} price={item.price} img={item.images[0]} numberOfItems={numberOfItems} setNumberOfItems={setNumberOfItems} item={item} clickedItems={clickedItems} setClickedItems={setClickedItems}/>
-            ))}
-        </div>
-        
-    )
-
+    return (
+      <div className="flex flex-wrap ml-40 mr-40 justify-between mt-8">
+        {data.products?.map((item) => (
+          <Card
+            key={item.id}
+            id={item.id}
+            title={item.title}
+            price={parseFloat(item.price.toFixed(1))}
+            img={item.images[0]}
+            numberOfItems={numberOfItems}
+            setNumberOfItems={setNumberOfItems}
+            item={item}
+            clickedItems={clickedItems}
+            setClickedItems={setClickedItems}
+          />
+        ))}
+      </div>
+    );
   }
-  
-}
+};
 
-export default Shop
+export default Shop;
