@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import ItemsCounter from "./ItemsCounter";
+import { useOutletContext } from "react-router-dom";
 
 const ClickedItemsCard = ({
   img,
@@ -9,8 +10,12 @@ const ClickedItemsCard = ({
   total,
   setTotal,
   setSubtotal,
+  setClickedItems,
+  clickedItems,
 }) => {
   const deliveryprice = 7;
+
+  const { numberOfItems, setNumberOfItems } = useOutletContext();
   const [quantity, setQuantity] = useState(1);
 
   const plusBtnHandler = () => {
@@ -23,6 +28,14 @@ const ClickedItemsCard = ({
     setQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1));
     setTotal(price * quantity + deliveryprice);
     setSubtotal((prevSub) => (quantity === 1 ? prevSub : prevSub - price));
+  };
+  const deleteBtnHandler = (itemToBeDeleted) => {
+    const newClickedItems = clickedItems.filter(
+      (el) => el.title !== itemToBeDeleted
+    );
+    setClickedItems(newClickedItems);
+    setNumberOfItems(numberOfItems - 1);
+    console.log(quantity);
   };
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 min-[550px]:gap-6 border-t border-gray-200 py-6">
@@ -38,6 +51,12 @@ const ClickedItemsCard = ({
           <h6 className="font-medium text-lg leading-8 text-fuchsia-500  max-[550px]:text-center">
             ${price}
           </h6>
+          <button
+            onClick={() => deleteBtnHandler(title)}
+            className=" w-64  py-2 px-4 bg-fuchsia-500 text-white font-semibold rounded-lg hover:bg-fuchsia-700"
+          >
+            Delete
+          </button>
         </div>
       </div>
       <div className="flex items-center flex-col min-[550px]:flex-row w-full max-xl:max-w-xl max-xl:mx-auto gap-2">

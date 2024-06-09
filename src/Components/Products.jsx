@@ -31,7 +31,11 @@ const Shop = () => {
   }, []);
   console.log("data", data);
   if (loading) {
-    return <h1>Loading...</h1>;
+    return (
+      <div className="h-screen mt-8">
+        <h1>Loading...</h1>
+      </div>
+    );
   } else {
     return (
       <div className="flex flex-wrap ml-40 mr-40 justify-between mt-8">

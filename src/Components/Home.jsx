@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 import Item1 from "./Assets/Shopping.jpg";
 import Item2 from "./Assets/asian-woman-using-the-smart-mobile-phone-for-check-online-shopping-order-is-completed-with-clothes-beside-the-glassess-in-store-shop-with-happy-action-at-department-center-961515078-d885f0506450479c9efb38d9ddf1ed58.jpg";
@@ -7,6 +7,7 @@ import Item3 from "./Assets/shopping-in-san-francisco-scaled.jpg";
 const Home = () => {
   const img = [Item1, Item2, Item3];
   const [indexOfImg, setIndexOfImg] = useState(0);
+  const [fillcolor, setFillColor] = useState("");
 
   const nextImage = () => {
     setIndexOfImg((prevIndex) => (prevIndex + 1) % img.length);
@@ -17,10 +18,10 @@ const Home = () => {
   };
 
   return (
-    <div className='overflow-x-hidden flex justify-center items-center relative w-screen h-screen'>
+    <div className="overflow-x-hidden flex justify-center items-center relative w-screen h-screen">
       <svg
         onClick={prevImage}
-        className='absolute left-4 cursor-pointer z-10'
+        className="absolute left-4 cursor-pointer z-10  hover:bg-fuchsia-300 rounded-full "
         width="50"
         height="50"
         viewBox="0 0 24 24"
@@ -43,11 +44,15 @@ const Home = () => {
         />
       </svg>
 
-      <img className='object-cover w-full h-full' src={img[indexOfImg]} alt="Slideshow" />
+      <img
+        className="object-cover w-full h-full"
+        src={img[indexOfImg]}
+        alt="Slideshow"
+      />
 
       <svg
         onClick={nextImage}
-        className='absolute right-4 cursor-pointer z-10'
+        className="absolute right-4 cursor-pointer z-10 hover:bg-fuchsia-300 rounded-full"
         width="50"
         height="50"
         viewBox="0 0 24 24"

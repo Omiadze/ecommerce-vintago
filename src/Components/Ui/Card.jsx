@@ -44,8 +44,8 @@ const Card = ({
   };
 
   return (
-    <article className="max-w-sm w-64 bg-white rounded-lg shadow-lg overflow-hidden dark:bg-gray-700 mb-4">
-      <div onClick={itemOnClick} className="hover:opacity-40 cursor-pointer">
+    <article className="max-w-sm w-64 bg-white rounded-lg shadow-lg overflow-hidden dark:bg-gray-700 mb-4 flex flex-col justify-between">
+      <div onClick={itemOnClick} className="hover:opacity-40 cursor-pointer h-">
         <img className="object-cover h-64 w-full" src={img} alt={title} />
         <div className="flex flex-col justify-between">
           <div className="flex flex-col gap-1 mt-4 px-4">

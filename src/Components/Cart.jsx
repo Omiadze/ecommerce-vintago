@@ -5,6 +5,7 @@ import ClickedItemsCard from "./Ui/ClickedItemsCard";
 const Cart = () => {
   const { clickedItems, setClickedItems } = useOutletContext();
   const { subtotal, setSubtotal } = useOutletContext();
+
   const [total, setTotal] = useState(0);
 
   console.log("hello", clickedItems);
@@ -19,7 +20,7 @@ const Cart = () => {
 
   const deliveryCharge = clickedItems.length * 7;
   return (
-    <section className="">
+    <section className="mb-8">
       <div className="w-full max-w-7xl  lg-6 mx-auto">
         <h2 className="title font-manrope font-bold text-4xl leading-10 mb-8 text-center text-black bg-fuchsia-400 p-8 text-white">
           Shopping Cart
@@ -46,6 +47,8 @@ const Cart = () => {
               setSubtotal={setSubtotal}
               total={setTotal}
               setTotal={setTotal}
+              setClickedItems={setClickedItems}
+              clickedItems={clickedItems}
             />
           ))}
         </div>
