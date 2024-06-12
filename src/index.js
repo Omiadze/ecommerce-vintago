@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import Products from "./Components/Products";
 import Home from "./Components/Home";
-import Nav from "./Components/Nav";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Cart from "./Components/Cart";
 import Description from "./Components/Description";

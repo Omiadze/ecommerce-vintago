@@ -35,7 +35,6 @@ const ClickedItemsCard = ({
     );
     setClickedItems(newClickedItems);
     setNumberOfItems(numberOfItems - 1);
-    console.log(quantity);
   };
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 min-[550px]:gap-6 border-t border-gray-200 py-6">

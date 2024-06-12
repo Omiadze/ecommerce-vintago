@@ -45,7 +45,7 @@ const Cart = () => {
               price={item.price}
               title={item.title}
               setSubtotal={setSubtotal}
-              total={setTotal}
+              total={total}
               setTotal={setTotal}
               setClickedItems={setClickedItems}
               clickedItems={clickedItems}
@@ -86,7 +86,7 @@ const Cart = () => {
             </span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="22"
+              strokeWidth="22"
               height="22"
               viewBox="0 0 22 22"
               fill="none"
@@ -94,9 +94,9 @@ const Cart = () => {
               <path
                 d="M8.25324 5.49609L13.7535 10.9963L8.25 16.4998"
                 stroke="#4F46E5"
-                stroke-width="1.6"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </button>
@@ -113,9 +113,9 @@ const Cart = () => {
               <path
                 d="M8.75324 5.49609L14.2535 10.9963L8.75 16.4998"
                 stroke="white"
-                stroke-width="1.6"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </button>

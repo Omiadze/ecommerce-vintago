@@ -7,7 +7,6 @@ import Item3 from "./Assets/shopping-in-san-francisco-scaled.jpg";
 const Home = () => {
   const img = [Item1, Item2, Item3];
   const [indexOfImg, setIndexOfImg] = useState(0);
-  const [fillcolor, setFillColor] = useState("");
 
   const nextImage = () => {
     setIndexOfImg((prevIndex) => (prevIndex + 1) % img.length);
@@ -18,11 +17,11 @@ const Home = () => {
   };
 
   return (
-    <div className="overflow-x-hidden flex justify-center items-center relative w-screen h-screen">
+    <div className="overflow-x-hidden flex justify-center items-center relative w-full h-screen">
       <svg
         onClick={prevImage}
         className="absolute left-4 cursor-pointer z-10  hover:bg-fuchsia-300 rounded-full "
-        width="50"
+        strokeWidth="50"
         height="50"
         viewBox="0 0 24 24"
         fill="none"
@@ -53,7 +52,7 @@ const Home = () => {
       <svg
         onClick={nextImage}
         className="absolute right-4 cursor-pointer z-10 hover:bg-fuchsia-300 rounded-full"
-        width="50"
+        strokeWidth="50"
         height="50"
         viewBox="0 0 24 24"
         fill="none"

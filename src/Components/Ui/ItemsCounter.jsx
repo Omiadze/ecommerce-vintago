@@ -18,22 +18,22 @@ const ItemsCounter = ({ plusBtnHandler, minusBtnHandler, quantity = 1 }) => {
           <path
             d="M16.5 11H5.5"
             stroke=""
-            stroke-width="1.6"
-            stroke-linecap="round"
+            strokeWidth="1.6"
+            strokeLinecap="round"
           />
           <path
             d="M16.5 11H5.5"
             stroke=""
-            stroke-opacity="0.2"
-            stroke-width="1.6"
-            stroke-linecap="round"
+            strokeOpacity="0.2"
+            strokeWidth="1.6"
+            strokeLinecap="round"
           />
           <path
             d="M16.5 11H5.5"
             stroke=""
-            stroke-opacity="0.2"
-            stroke-width="1.6"
-            stroke-linecap="round"
+            strokeOpacity="0.2"
+            strokeWidth="1.6"
+            strokeLinecap="round"
           />
         </svg>
       </button>
@@ -58,22 +58,22 @@ const ItemsCounter = ({ plusBtnHandler, minusBtnHandler, quantity = 1 }) => {
           <path
             d="M11 5.5V16.5M16.5 11H5.5"
             stroke=""
-            stroke-width="1.6"
-            stroke-linecap="round"
+            strokeWidth="1.6"
+            strokeLinecap="round"
           />
           <path
             d="M11 5.5V16.5M16.5 11H5.5"
             stroke=""
-            stroke-opacity="0.2"
-            stroke-width="1.6"
-            stroke-linecap="round"
+            strokeOpacity="0.2"
+            strokeWidth="1.6"
+            strokeLinecap="round"
           />
           <path
             d="M11 5.5V16.5M16.5 11H5.5"
             stroke=""
-            stroke-opacity="0.2"
-            stroke-width="1.6"
-            stroke-linecap="round"
+            strokeOpacity="0.2"
+            strokeWidth="1.6"
+            strokeLinecap="round"
           />
         </svg>
       </button>

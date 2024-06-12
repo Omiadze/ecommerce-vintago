@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Nav = ({ numberOfItems, setNumberOfItems }) => {
+const Nav = ({ numberOfItems }) => {
   return (
     <header className="header sticky top-0 bg-white shadow-md flex items-center justify-between px-8 py-02">
       <h1 className="w-3/12 font-light text-5xl">

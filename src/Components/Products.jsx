@@ -29,33 +29,41 @@ const Shop = () => {
 
     fetchDataForPosts();
   }, []);
-  console.log("data", data);
+
   if (loading) {
     return (
       <div className="h-screen mt-8">
         <h1>Loading...</h1>
       </div>
     );
-  } else {
+  }
+
+  if (error) {
     return (
-      <div className="flex flex-wrap ml-40 mr-40 justify-between mt-8">
-        {data.products?.map((item) => (
-          <Card
-            key={item.id}
-            id={item.id}
-            title={item.title}
-            price={parseFloat(item.price.toFixed(1))}
-            img={item.images[0]}
-            numberOfItems={numberOfItems}
-            setNumberOfItems={setNumberOfItems}
-            item={item}
-            clickedItems={clickedItems}
-            setClickedItems={setClickedItems}
-          />
-        ))}
+      <div className="h-screen mt-8">
+        <h1>Error: {error}</h1>
       </div>
     );
   }
+
+  return (
+    <div className="flex flex-wrap ml-40 mr-40 justify-between mt-8">
+      {data.products?.map((item) => (
+        <Card
+          key={item.id}
+          id={item.id}
+          title={item.title}
+          price={parseFloat(item.price.toFixed(1))}
+          img={item.images[0]}
+          numberOfItems={numberOfItems}
+          setNumberOfItems={setNumberOfItems}
+          item={item}
+          clickedItems={clickedItems}
+          setClickedItems={setClickedItems}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default Shop;
