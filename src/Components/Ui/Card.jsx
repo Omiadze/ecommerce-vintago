@@ -39,7 +39,7 @@ const Card = ({
   };
 
   return (
-    <article className="max-w-sm md:w-64 w-40 bg-white rounded-lg shadow-lg overflow-hidden  mb-4 flex flex-col justify-between">
+    <article className="max-w-sm md:w-64 w-40 bg-white rounded-lg shadow-lg overflow-hidden  mb-4 flex flex-col justify-between text-black">
       <div onClick={itemOnClick} className="hover:opacity-40 cursor-pointer h-">
         <img
           className="lg:w-[180px] sm:w-[140px] m-auto md:h-[200px] h-[120px]"
@@ -48,20 +48,18 @@ const Card = ({
         />
         <div className="flex flex-col justify-between">
           <div className="flex flex-col gap-1 mt-4 px-4">
-            <p className="text-black-800 dark:text-gray-50 text-left">
-              ${price}
-            </p>
-            <p className="font-semibold text-gray-800 md:text-lg text-sm dark:text-gray-50 text-left">
+            <p className="text-black-800 text-left">${price}</p>
+            <p className="font-semibold  md:text-lg text-sm  text-left">
               {title}
             </p>
           </div>
         </div>
       </div>
 
-      <div className="mt-4 p-4 border-t border-gray-200 dark:border-gray-500">
+      <div className="mt-4 p-4 border-t border-gray-200 ">
         <button
           onClick={handleCartBtn}
-          className="w-full flex justify-between items-center font-bold cursor-pointer hover:text-fuchsia-300 text-gray-800 dark:text-gray-50"
+          className="w-full flex justify-between items-center font-bold cursor-pointer hover:text-fuchsia-300 text-gray-800 "
         >
           <span className="text-base md:block hidden">Add to Cart</span>
           {addedToCart ? (
