@@ -47,7 +47,7 @@ const Shop = () => {
   }
 
   return (
-    <div className="flex flex-wrap ml-40 mr-40 justify-between mt-8">
+    <div className="flex flex-wrap md:ml-40 ml-4 md:mr-40 mr-4 justify-between mt-8">
       {data.products?.map((item) => (
         <Card
           key={item.id}

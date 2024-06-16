@@ -30,29 +30,28 @@ const Card = ({
   const itemOnClick = () => {
     navigate("/description", {
       state: {
-        // id: item.id,
         title,
         img,
         price,
         description: item.description,
-        // clickedItems,
-        // numberOfItems,
-        // setNumberOfItems,
-        // setClickedItems,
       },
     });
   };
 
   return (
-    <article className="max-w-sm w-64 bg-white rounded-lg shadow-lg overflow-hidden dark:bg-gray-700 mb-4 flex flex-col justify-between">
+    <article className="max-w-sm md:w-64 w-40 bg-white rounded-lg shadow-lg overflow-hidden dark:bg-gray-700 mb-4 flex flex-col justify-between">
       <div onClick={itemOnClick} className="hover:opacity-40 cursor-pointer h-">
-        <img className="object-cover h-64 w-full" src={img} alt={title} />
+        <img
+          className="lg:w-[180px] sm:w-[140px] m-auto md:h-[200px] h-[120px]"
+          src={img}
+          alt={title}
+        />
         <div className="flex flex-col justify-between">
           <div className="flex flex-col gap-1 mt-4 px-4">
             <p className="text-black-800 dark:text-gray-50 text-left">
               ${price}
             </p>
-            <p className="font-semibold text-gray-800 dark:text-gray-50 text-left">
+            <p className="font-semibold text-gray-800 md:text-lg text-sm dark:text-gray-50 text-left">
               {title}
             </p>
           </div>
@@ -64,7 +63,7 @@ const Card = ({
           onClick={handleCartBtn}
           className="w-full flex justify-between items-center font-bold cursor-pointer hover:text-fuchsia-300 text-gray-800 dark:text-gray-50"
         >
-          <span className="text-base">Add to Cart</span>
+          <span className="text-base md:block hidden">Add to Cart</span>
           {addedToCart ? (
             <svg
               className="h-6 w-6 text-fuchsia-500"

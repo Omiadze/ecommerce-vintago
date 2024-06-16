@@ -40,7 +40,11 @@ const ClickedItemsCard = ({
     <div className="grid grid-cols-1 lg:grid-cols-2 min-[550px]:gap-6 border-t border-gray-200 py-6">
       <div className="flex items-center flex-col min-[550px]:flex-row gap-3 min-[550px]:gap-6 w-full max-xl:justify-center max-xl:max-w-xl max-xl:mx-auto">
         <div className="img-box">
-          <img src={img} alt={title} className="xl:w-[140px]" />
+          <img
+            src={img}
+            alt={title}
+            className="lg:w-[140px] sm:w-[100px] w-[100px]"
+          />
         </div>
         <div className="pro-data w-full max-w-sm ">
           <h5 className="font-semibold text-xl leading-8 text-black max-[550px]:text-center">
