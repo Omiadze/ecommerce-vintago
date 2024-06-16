@@ -39,7 +39,7 @@ const Card = ({
   };
 
   return (
-    <article className="max-w-sm md:w-64 w-40 bg-white rounded-lg shadow-lg overflow-hidden dark:bg-gray-700 mb-4 flex flex-col justify-between">
+    <article className="max-w-sm md:w-64 w-40 bg-white rounded-lg shadow-lg overflow-hidden  mb-4 flex flex-col justify-between">
       <div onClick={itemOnClick} className="hover:opacity-40 cursor-pointer h-">
         <img
           className="lg:w-[180px] sm:w-[140px] m-auto md:h-[200px] h-[120px]"
