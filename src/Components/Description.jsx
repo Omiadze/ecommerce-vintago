@@ -7,11 +7,11 @@ const Description = () => {
   const { title, img, price, description } = location.state;
 
   return (
-    <div className="bg-white rounded-lg shadow-lg  flex flex-col md:flex-row mx-4 md:mx-24 mt-4 items-center h-screen md:mt-4 mt-16 text-black">
+    <div className="bg-white rounded-lg shadow-lg  flex flex-col md:flex-row mx-4 md:mx-24 mt-4 items-center  md:h-screen h-full md:mt-4 mt-16 text-black md:mb-4">
       <div className="w-full md:w-1/3">
         <img className="lg:w-[200px] w-[160px] m-auto" src={img} alt={title} />
       </div>
-      <div className="p-4 flex flex-col items-start w-full md:w-1/2">
+      <div className="p-4 flex flex-col items-start w-full md:w-1/2 justify-between">
         <div className="w-full">
           <h2 className="mb-4 text-left text-xl font-semibold text-fuchsia-500 ">
             {title}
